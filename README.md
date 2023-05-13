@@ -1,20 +1,27 @@
 # Ju2tin Website hosted at https://ju2tin.com
 This repository contains the source code for my personal website, hosted on AWS using S3, CloudFront, and Amplify. The website was set up using the following steps in AWS:
 
-Host a static website using Amazon S3
-Add a custom domain managed by Amazon Route 53
 ## Setup
-The steps taken to set up the website using the above guides are explained below:
+The steps taken to set up the website were primarily guided by Amazon AWS documentation.
 
-## Step 1: Host a static website using Amazon S3
+## Step 1: Host a static website using Amazon S3 OR Github repository
 ### Create an Amazon S3 bucket: 
-Created a new S3 bucket to store the website's static files. The bucket name is the same as the custom domain, e.g., www.example.com.
+Created a new S3 bucket to store the website's static files. The bucket name is the same as the custom domain, e.g., www.ju2tin.com.
+
+## Github: Create a Github repository
+Created a Github repository which will contain the index.html file as well as all other assets.
 
 ### Enable static website hosting: 
 Configured the S3 bucket to function as a static website by enabling the "Static website hosting" feature in the bucket properties. Set the index document to index.html and the error document to error.html.
 
+### Github: Give Amplify access to the repository
+Configured permissions for the repository such that AWS Amplify had access to the necessary files. 
+
 ### Upload files to the S3 bucket: 
 Uploaded the website's static files, including index.html, error.html, and any other assets such as images, CSS, and JavaScript files, to the S3 bucket.
+
+### Github: Upload static HTML files to the repository
+Uploaded the static HTML files to the repository. Alternatively, actions can be setup to automate releases if the website was developed using libraries such as ReactJS.
 
 ### Set bucket policy: 
 Configured the S3 bucket's policy to allow public access to the files. This is required for users to access the website over the internet.
